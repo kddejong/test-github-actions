@@ -1,0 +1,15 @@
+name: GitHub CloudFormation Deployment
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Deploy
+        uses: aws-actions/aws-cloudformation-github-deploy@master
+        with:
+          name: TestGitHubAction
+          template: stack.yaml
+          parameter-overrides: "MyParam1=myValue"
