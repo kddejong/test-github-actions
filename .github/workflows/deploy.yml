@@ -1,15 +1,24 @@
 name: GitHub CloudFormation Deployment
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::837619682825:role/github-cfn-role
+          aws-region: us-east-1
       - name: Deploy
         uses: aws-actions/aws-cloudformation-github-deploy@master
         with:
           name: TestGitHubAction
           template: stack.yaml
           parameter-overrides: "MyParam1=myValue"
+          region: us-east-1
