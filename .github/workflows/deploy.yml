@@ -20,5 +20,5 @@ jobs:
         with:
           name: TestGitHubAction
           template: stack.yaml
-          parameter-overrides: "MyParam1=myValue"
+          parameter-overrides: "Environment=beta"
           region: us-east-1
