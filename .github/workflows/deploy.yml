@@ -20,5 +20,5 @@ jobs:
         with:
           name: TestGitHubAction
           template: stack.yaml
-          parameter-overrides: "file:///${{ github.workspace }}/overrides.json"
+          parameter-overrides: "Environment=gamma"
           region: us-east-1
