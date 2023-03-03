@@ -6,9 +6,16 @@ Parameters:
       - gamma
       - prod
     Default: beta
+  AList:
+    Type: CommaDelimitedList
 Resources:
   SsmParameter:
     Type: AWS::SSM::Parameter
     Properties:
       Type: String
       Value: !Ref Environment
+  SsmParameterList:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Type: String
+      Value: !Join [", ", !Ref AList]
