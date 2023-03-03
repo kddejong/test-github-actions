@@ -20,5 +20,5 @@ jobs:
         with:
           name: TestGitHubAction
           template: stack.yaml
-          parameter-overrides: "Environment=beta"
+          parameter-overrides: "file:///${{ github.workspace }}/overrides.json"
           region: us-east-1
