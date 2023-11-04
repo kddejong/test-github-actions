@@ -16,11 +16,10 @@ jobs:
           role-to-assume: arn:aws:iam::837619682825:role/github-cfn-role
           aws-region: us-east-1
       - name: Deploy
-        uses: aws-actions/aws-cloudformation-github-deploy@v1.2.0
+        uses: aws-actions/aws-cloudformation-github-deploy@master
         with:
           name: TestGitHubAction
           template: stack.yaml
           parameter-overrides: >-
             Environment=gamma,
             AList="value1,value2"
-          region: us-east-1
