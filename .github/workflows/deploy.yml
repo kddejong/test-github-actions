@@ -21,5 +21,5 @@ jobs:
           name: TestGitHubAction
           template: stack.yaml
           parameter-overrides: >-
-            Environment=gamma,
+            Environment=beta,
             AList="value1,value2"
