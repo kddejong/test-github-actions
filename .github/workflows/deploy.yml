@@ -16,7 +16,7 @@ jobs:
           role-to-assume: arn:aws:iam::837619682825:role/github-cfn-role
           aws-region: us-east-1
       - name: Deploy
-        uses: kddejong/aws-cloudformation-github-deploy@chefren-fix/112
+        uses: aws-actions/aws-cloudformation-github-deploy@master
         with:
           name: TestGitHubAction
           template: stack.yaml
