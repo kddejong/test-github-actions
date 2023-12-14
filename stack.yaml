@@ -18,4 +18,4 @@ Resources:
     Type: AWS::SSM::Parameter
     Properties:
       Type: String
-      Value: !Join [", ", !Ref AList]
+      Value: !Join [",", !Ref AList]
