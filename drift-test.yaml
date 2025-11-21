@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  RunNumber:
+    Type: String
+    Description: GitHub run number for unique naming
+Resources:
+  DriftTestParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub '/test/drift-${RunNumber}'
+      Type: String
+      Value: original-value
+      Tags:
+        Environment: test
+        Purpose: drift-detection
+Outputs:
+  ParameterName:
+    Value: !Ref DriftTestParameter
+  ParameterArn:
+    Value: !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter${DriftTestParameter}'

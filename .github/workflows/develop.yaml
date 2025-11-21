@@ -1,0 +1,146 @@
+name: Test CloudFormation Action v2.0.0-beta
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write   # This is required for requesting the JWT
+  contents: read    # This is required for actions/checkout
+
+jobs:
+  test-create-and-execute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::837619682825:role/github-cfn-role
+          aws-region: us-east-1
+
+      - name: Test with local template and JSON file
+        id: deploy-file
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          name: test-file-${{ github.run_number }}
+          template: stack.yaml
+          parameter-overrides: "file:///${{ github.workspace }}/overrides.json"
+
+      - name: Test with inline parameters
+        id: deploy-inline
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          name: test-inline-${{ github.run_number }}
+          template: stack.yaml
+          parameter-overrides: "Environment=gamma,AList=value1,AList=value2"
+
+  test-create-only-then-execute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::837619682825:role/github-cfn-role
+          aws-region: us-east-1
+
+      - name: Create change set for review
+        id: create-cs
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          mode: "create-only"
+          name: test-two-step-${{ github.run_number }}
+          template: stack.yaml
+          parameter-overrides: "Environment=prod,AList=prod1,AList=prod2"
+
+      - name: Review change set outputs
+        run: |
+          echo "Change Set ID: ${{ steps.create-cs.outputs.change-set-id }}"
+          echo "Has Changes: ${{ steps.create-cs.outputs.has-changes }}"
+          echo "Changes Count: ${{ steps.create-cs.outputs.changes-count }}"
+
+      - name: Execute change set
+        if: steps.create-cs.outputs.has-changes == 'true'
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          mode: "execute-only"
+          name: test-two-step-${{ github.run_number }}
+          execute-change-set-id: ${{ steps.create-cs.outputs.change-set-id }}
+
+  test-drift-detection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::837619682825:role/github-cfn-role
+          aws-region: us-east-1
+
+      - name: Deploy initial stack for drift testing
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          name: test-drift-${{ github.run_number }}
+          template: drift-test.yaml
+          parameter-overrides: "RunNumber=${{ github.run_number }}"
+
+      - name: Introduce drift by manually changing parameter
+        run: |
+          # Add a tag outside of CloudFormation to create drift
+          aws ssm add-tags-to-resource \
+            --resource-type Parameter \
+            --resource-id /test/drift-${{ github.run_number }} \
+            --tags Key=ManualTag,Value=added-outside-cfn
+          
+          # Change the parameter value to create more drift
+          aws ssm put-parameter \
+            --name /test/drift-${{ github.run_number }} \
+            --value "manually-changed-value" \
+            --overwrite
+
+      - name: Create drift-reverting change set
+        id: drift-cs
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          mode: "create-only"
+          name: test-drift-${{ github.run_number }}
+          template: drift-test.yaml
+          parameter-overrides: "RunNumber=${{ github.run_number }}"
+          deployment-mode: "REVERT_DRIFT"
+
+      - name: Review drift change set
+        run: |
+          echo "Drift Change Set ID: ${{ steps.drift-cs.outputs.change-set-id }}"
+          echo "Has Changes: ${{ steps.drift-cs.outputs.has-changes }}"
+          echo "Changes Count: ${{ steps.drift-cs.outputs.changes-count }}"
+          echo "Changes Summary: ${{ steps.drift-cs.outputs.changes-summary }}"
+
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: [test-create-and-execute, test-create-only-then-execute, test-drift-detection]
+    if: always()
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::837619682825:role/github-cfn-role
+          aws-region: us-east-1
+
+      - name: Cleanup test stacks
+        run: |
+          aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query "StackSummaries[?contains(StackName, 'test-') && contains(StackName, '${{ github.run_number }}')].StackName" --output text | tr '\t' '\n' | while read stack; do
+            if [ ! -z "$stack" ]; then
+              echo "Deleting stack: $stack"
+              aws cloudformation delete-stack --stack-name "$stack"
+            fi
+          done
+
+      - name: Cleanup SSM parameters
+        run: |
+          # Clean up any leftover SSM parameters
+          aws ssm delete-parameter --name "/test/drift-${{ github.run_number }}" || echo "Parameter already deleted"
