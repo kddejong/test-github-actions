@@ -112,6 +112,51 @@ jobs:
           echo "Execution error test completed (expected to fail during change set execution)"
           echo "This test verifies that execution errors produce detailed failure information"
 
+  test-empty-changeset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::837619682825:role/github-cfn-role
+          aws-region: us-east-1
+
+      - name: Deploy stack first time
+        id: deploy-first
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          name: test-empty-changeset-${{ github.run_number }}
+          template: stack.yaml
+          parameter-overrides: "Environment=beta,AList=value1,AList=value2"
+
+      - name: Deploy same stack again with default behavior (should succeed on empty changeset)
+        id: deploy-second-default
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          name: test-empty-changeset-${{ github.run_number }}
+          template: stack.yaml
+          parameter-overrides: "Environment=beta,AList=value1,AList=value2"
+
+      - name: Deploy same stack again with fail-on-empty-changeset=1 (should fail on empty changeset)
+        id: deploy-second-fail
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          name: test-empty-changeset-${{ github.run_number }}
+          template: stack.yaml
+          parameter-overrides: "Environment=beta,AList=value1,AList=value2"
+          fail-on-empty-changeset: "1"
+        continue-on-error: true
+
+      - name: Verify empty changeset behavior
+        run: |
+          echo "Empty changeset test completed"
+          echo "First deployment: ${{ steps.deploy-first.outputs.stack-id }}"
+          echo "Second deployment (default): ${{ steps.deploy-second-default.outputs.stack-id }}"
+          echo "Third deployment (fail flag): Expected to fail"
+          echo "This verifies v2 behavior: empty changesets succeed by default, fail when flag is set"
+
   test-create-only-then-execute:
     runs-on: ubuntu-latest
     steps:

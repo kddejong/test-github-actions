@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'Template that passes validation but fails during execution'
+Description: 'Template that passes validation but fails during execution (SSM parameter with invalid tag keys)'
 
 Parameters:
   Environment:
@@ -7,31 +7,25 @@ Parameters:
     Default: test
 
 Resources:
-  TestVPC:
-    Type: AWS::EC2::VPC
+  # SSM parameter with invalid tag keys - will pass validation but fail execution
+  TestParameter:
+    Type: AWS::SSM::Parameter
     Properties:
-      CidrBlock: 10.0.0.0/16
-      EnableDnsHostnames: true
-      EnableDnsSupport: true
+      Name: !Sub "/${Environment}/execution-test/parameter-with-invalid-tags"
+      Type: String
+      Value: "This parameter will fail due to invalid tag keys"
+      Description: "Parameter with invalid tag keys to test execution error handling"
       Tags:
-        - Key: Name
-          Value: !Sub "${Environment}-execution-test-vpc"
-
-  # This subnet CIDR is outside the VPC CIDR - will pass validation but fail execution
-  TestSubnet:
-    Type: AWS::EC2::Subnet
-    Properties:
-      VpcId: !Ref TestVPC
-      CidrBlock: 192.168.1.0/24  # Outside of VPC CIDR 10.0.0.0/16
-      AvailabilityZone: !Select [0, !GetAZs '']
-      Tags:
-        - Key: Name
-          Value: !Sub "${Environment}-execution-test-subnet"
+        # Tag key with invalid characters ($ % ^ & * are not in the allowed pattern)
+        "invalid$tag%key^with&forbidden*characters": "should-fail"
+        # Tag key with brackets (not allowed)
+        "tag[with]brackets": "should-fail"  
+        # Tag key with pipes (not allowed)
+        "tag|with|pipes": "should-fail"
+        # Valid tag for comparison
+        Environment: !Ref Environment
 
 Outputs:
-  VPCId:
-    Description: "ID of the VPC"
-    Value: !Ref TestVPC
-  SubnetId:
-    Description: "ID of the Subnet"
-    Value: !Ref TestSubnet
+  ParameterName:
+    Description: "Name of the parameter"
+    Value: !Ref TestParameter
