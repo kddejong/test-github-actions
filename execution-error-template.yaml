@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'Template that passes validation but fails during execution (SSM parameter with invalid tag keys)'
+Description: 'Template that passes validation but fails during execution (VPC and Subnet with overlapping CIDRs)'
 
 Parameters:
   Environment:
@@ -7,25 +7,36 @@ Parameters:
     Default: test
 
 Resources:
-  # SSM parameter with invalid tag keys - will pass validation but fail execution
-  TestParameter:
-    Type: AWS::SSM::Parameter
+  # VPC with CIDR block
+  TestVPC:
+    Type: AWS::EC2::VPC
     Properties:
-      Name: !Sub "/${Environment}/execution-test/parameter-with-invalid-tags"
-      Type: String
-      Value: "This parameter will fail due to invalid tag keys"
-      Description: "Parameter with invalid tag keys to test execution error handling"
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
       Tags:
-        # Tag key with invalid characters ($ % ^ & * are not in the allowed pattern)
-        "invalid$tag%key^with&forbidden*characters": "should-fail"
-        # Tag key with brackets (not allowed)
-        "tag[with]brackets": "should-fail"  
-        # Tag key with pipes (not allowed)
-        "tag|with|pipes": "should-fail"
-        # Valid tag for comparison
-        Environment: !Ref Environment
+        - Key: Name
+          Value: !Sub "${Environment}-test-vpc"
+        - Key: Environment
+          Value: !Ref Environment
+
+  # Subnet with CIDR that doesn't fit within VPC CIDR - will cause execution error
+  TestSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref TestVPC
+      CidrBlock: 192.168.1.0/24  # This CIDR doesn't overlap with VPC CIDR 10.0.0.0/16
+      AvailabilityZone: !Select [0, !GetAZs '']
+      Tags:
+        - Key: Name
+          Value: !Sub "${Environment}-test-subnet"
+        - Key: Environment
+          Value: !Ref Environment
 
 Outputs:
-  ParameterName:
-    Description: "Name of the parameter"
-    Value: !Ref TestParameter
+  VPCId:
+    Description: "ID of the VPC"
+    Value: !Ref TestVPC
+  SubnetId:
+    Description: "ID of the Subnet"
+    Value: !Ref TestSubnet

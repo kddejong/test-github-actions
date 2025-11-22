@@ -182,6 +182,7 @@ jobs:
           echo "Change Set ID: ${{ steps.create-cs.outputs.change-set-id }}"
           echo "Has Changes: ${{ steps.create-cs.outputs.has-changes }}"
           echo "Changes Count: ${{ steps.create-cs.outputs.changes-count }}"
+          echo "Changes Summary: ${{ steps.create-cs.outputs.changes-summary }}"
 
       - name: Execute change set
         if: steps.create-cs.outputs.has-changes == 'true'
