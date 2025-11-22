@@ -2,5 +2,9 @@
   {
     "ParameterKey": "Environment",
     "ParameterValue": "beta"
+  },
+  {
+    "ParameterKey": "AList",
+    "ParameterValue": "value1,value2"
   }
 ]
