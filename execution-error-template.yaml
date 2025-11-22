@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Template that passes validation but fails during execution'
+
+Parameters:
+  Environment:
+    Type: String
+    Default: test
+
+Resources:
+  TestVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      Tags:
+        - Key: Name
+          Value: !Sub "${Environment}-execution-test-vpc"
+
+  # This subnet CIDR is outside the VPC CIDR - will pass validation but fail execution
+  TestSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref TestVPC
+      CidrBlock: 192.168.1.0/24  # Outside of VPC CIDR 10.0.0.0/16
+      AvailabilityZone: !Select [0, !GetAZs '']
+      Tags:
+        - Key: Name
+          Value: !Sub "${Environment}-execution-test-subnet"
+
+Outputs:
+  VPCId:
+    Description: "ID of the VPC"
+    Value: !Ref TestVPC
+  SubnetId:
+    Description: "ID of the Subnet"
+    Value: !Ref TestSubnet

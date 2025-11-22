@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Template with validation error to test error handling'
+
+Parameters:
+  Environment:
+    Type: String
+    Default: test
+
+Resources:
+  InvalidSSMParameter:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/validation-test/invalid-parameter"
+      Type: Foo  # Invalid type - should cause validation error
+      Value: "This will fail validation"
+      Description: "Parameter with invalid type to test validation error handling"
+
+Outputs:
+  ParameterName:
+    Description: "Name of the invalid parameter"
+    Value: !Ref InvalidSSMParameter

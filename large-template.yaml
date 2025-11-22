@@ -1,0 +1,2809 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Large CloudFormation template to test S3 upload requirement'
+
+Parameters:
+  Environment:
+    Type: String
+    Default: test
+
+Resources:
+  SSMParameter001:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-001-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 001"
+      Description: "Parameter 001 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "001"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter002:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-002-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 002"
+      Description: "Parameter 002 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "002"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter003:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-003-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 003"
+      Description: "Parameter 003 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "003"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter004:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-004-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 004"
+      Description: "Parameter 004 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "004"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter005:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-005-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 005"
+      Description: "Parameter 005 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "005"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter006:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-006-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 006"
+      Description: "Parameter 006 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "006"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter007:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-007-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 007"
+      Description: "Parameter 007 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "007"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter008:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-008-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 008"
+      Description: "Parameter 008 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "008"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter009:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-009-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 009"
+      Description: "Parameter 009 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "009"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter010:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-010-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 010"
+      Description: "Parameter 010 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "010"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter011:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-011-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 011"
+      Description: "Parameter 011 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "011"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter012:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-012-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 012"
+      Description: "Parameter 012 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "012"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter013:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-013-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 013"
+      Description: "Parameter 013 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "013"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter014:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-014-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 014"
+      Description: "Parameter 014 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "014"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter015:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-015-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 015"
+      Description: "Parameter 015 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "015"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter016:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-016-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 016"
+      Description: "Parameter 016 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "016"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter017:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-017-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 017"
+      Description: "Parameter 017 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "017"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter018:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-018-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 018"
+      Description: "Parameter 018 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "018"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter019:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-019-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 019"
+      Description: "Parameter 019 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "019"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter020:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-020-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 020"
+      Description: "Parameter 020 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "020"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter021:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-021-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 021"
+      Description: "Parameter 021 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "021"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter022:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-022-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 022"
+      Description: "Parameter 022 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "022"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter023:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-023-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 023"
+      Description: "Parameter 023 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "023"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter024:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-024-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 024"
+      Description: "Parameter 024 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "024"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter025:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-025-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 025"
+      Description: "Parameter 025 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "025"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter026:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-026-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 026"
+      Description: "Parameter 026 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "026"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter027:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-027-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 027"
+      Description: "Parameter 027 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "027"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter028:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-028-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 028"
+      Description: "Parameter 028 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "028"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter029:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-029-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 029"
+      Description: "Parameter 029 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "029"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter030:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-030-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 030"
+      Description: "Parameter 030 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "030"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter031:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-031-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 031"
+      Description: "Parameter 031 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "031"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter032:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-032-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 032"
+      Description: "Parameter 032 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "032"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter033:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-033-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 033"
+      Description: "Parameter 033 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "033"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter034:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-034-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 034"
+      Description: "Parameter 034 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "034"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter035:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-035-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 035"
+      Description: "Parameter 035 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "035"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter036:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-036-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 036"
+      Description: "Parameter 036 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "036"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter037:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-037-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 037"
+      Description: "Parameter 037 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "037"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter038:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-038-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 038"
+      Description: "Parameter 038 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "038"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter039:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-039-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 039"
+      Description: "Parameter 039 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "039"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter040:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-040-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 040"
+      Description: "Parameter 040 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "040"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter041:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-041-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 041"
+      Description: "Parameter 041 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "041"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter042:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-042-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 042"
+      Description: "Parameter 042 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "042"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter043:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-043-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 043"
+      Description: "Parameter 043 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "043"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter044:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-044-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 044"
+      Description: "Parameter 044 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "044"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter045:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-045-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 045"
+      Description: "Parameter 045 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "045"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter046:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-046-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 046"
+      Description: "Parameter 046 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "046"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter047:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-047-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 047"
+      Description: "Parameter 047 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "047"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter048:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-048-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 048"
+      Description: "Parameter 048 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "048"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter049:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-049-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 049"
+      Description: "Parameter 049 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "049"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter050:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-050-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 050"
+      Description: "Parameter 050 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "050"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter051:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-051-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 051"
+      Description: "Parameter 051 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "051"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter052:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-052-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 052"
+      Description: "Parameter 052 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "052"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter053:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-053-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 053"
+      Description: "Parameter 053 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "053"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter054:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-054-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 054"
+      Description: "Parameter 054 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "054"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter055:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-055-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 055"
+      Description: "Parameter 055 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "055"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter056:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-056-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 056"
+      Description: "Parameter 056 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "056"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter057:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-057-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 057"
+      Description: "Parameter 057 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "057"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter058:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-058-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 058"
+      Description: "Parameter 058 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "058"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter059:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-059-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 059"
+      Description: "Parameter 059 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "059"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter060:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-060-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 060"
+      Description: "Parameter 060 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "060"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter061:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-061-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 061"
+      Description: "Parameter 061 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "061"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter062:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-062-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 062"
+      Description: "Parameter 062 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "062"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter063:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-063-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 063"
+      Description: "Parameter 063 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "063"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter064:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-064-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 064"
+      Description: "Parameter 064 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "064"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter065:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-065-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 065"
+      Description: "Parameter 065 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "065"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter066:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-066-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 066"
+      Description: "Parameter 066 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "066"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter067:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-067-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 067"
+      Description: "Parameter 067 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "067"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter068:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-068-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 068"
+      Description: "Parameter 068 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "068"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter069:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-069-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 069"
+      Description: "Parameter 069 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "069"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter070:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-070-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 070"
+      Description: "Parameter 070 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "070"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter071:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-071-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 071"
+      Description: "Parameter 071 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "071"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter072:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-072-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 072"
+      Description: "Parameter 072 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "072"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter073:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-073-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 073"
+      Description: "Parameter 073 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "073"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter074:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-074-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 074"
+      Description: "Parameter 074 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "074"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter075:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-075-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 075"
+      Description: "Parameter 075 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "075"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter076:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-076-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 076"
+      Description: "Parameter 076 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "076"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter077:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-077-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 077"
+      Description: "Parameter 077 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "077"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter078:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-078-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 078"
+      Description: "Parameter 078 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "078"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter079:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-079-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 079"
+      Description: "Parameter 079 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "079"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter080:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-080-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 080"
+      Description: "Parameter 080 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "080"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter081:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-081-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 081"
+      Description: "Parameter 081 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "081"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter082:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-082-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 082"
+      Description: "Parameter 082 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "082"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter083:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-083-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 083"
+      Description: "Parameter 083 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "083"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter084:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-084-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 084"
+      Description: "Parameter 084 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "084"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter085:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-085-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 085"
+      Description: "Parameter 085 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "085"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter086:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-086-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 086"
+      Description: "Parameter 086 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "086"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter087:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-087-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 087"
+      Description: "Parameter 087 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "087"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter088:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-088-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 088"
+      Description: "Parameter 088 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "088"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter089:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-089-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 089"
+      Description: "Parameter 089 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "089"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter090:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-090-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 090"
+      Description: "Parameter 090 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "090"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter091:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-091-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 091"
+      Description: "Parameter 091 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "091"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter092:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-092-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 092"
+      Description: "Parameter 092 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "092"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter093:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-093-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 093"
+      Description: "Parameter 093 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "093"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter094:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-094-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 094"
+      Description: "Parameter 094 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "094"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter095:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-095-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 095"
+      Description: "Parameter 095 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "095"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter096:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-096-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 096"
+      Description: "Parameter 096 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "096"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter097:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-097-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 097"
+      Description: "Parameter 097 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "097"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter098:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-098-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 098"
+      Description: "Parameter 098 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "098"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter099:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-099-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 099"
+      Description: "Parameter 099 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "099"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter100:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-100-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 100"
+      Description: "Parameter 100 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "100"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter101:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-101-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 101"
+      Description: "Parameter 101 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "101"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter102:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-102-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 102"
+      Description: "Parameter 102 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "102"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter103:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-103-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 103"
+      Description: "Parameter 103 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "103"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter104:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-104-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 104"
+      Description: "Parameter 104 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "104"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter105:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-105-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 105"
+      Description: "Parameter 105 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "105"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter106:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-106-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 106"
+      Description: "Parameter 106 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "106"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter107:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-107-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 107"
+      Description: "Parameter 107 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "107"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter108:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-108-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 108"
+      Description: "Parameter 108 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "108"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter109:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-109-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 109"
+      Description: "Parameter 109 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "109"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter110:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-110-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 110"
+      Description: "Parameter 110 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "110"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter111:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-111-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 111"
+      Description: "Parameter 111 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "111"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter112:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-112-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 112"
+      Description: "Parameter 112 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "112"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter113:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-113-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 113"
+      Description: "Parameter 113 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "113"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter114:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-114-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 114"
+      Description: "Parameter 114 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "114"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter115:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-115-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 115"
+      Description: "Parameter 115 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "115"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter116:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-116-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 116"
+      Description: "Parameter 116 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "116"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter117:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-117-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 117"
+      Description: "Parameter 117 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "117"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter118:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-118-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 118"
+      Description: "Parameter 118 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "118"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter119:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-119-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 119"
+      Description: "Parameter 119 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "119"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter120:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-120-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 120"
+      Description: "Parameter 120 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "120"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter121:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-121-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 121"
+      Description: "Parameter 121 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "121"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter122:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-122-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 122"
+      Description: "Parameter 122 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "122"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter123:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-123-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 123"
+      Description: "Parameter 123 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "123"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter124:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-124-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 124"
+      Description: "Parameter 124 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "124"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter125:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-125-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 125"
+      Description: "Parameter 125 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "125"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter126:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-126-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 126"
+      Description: "Parameter 126 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "126"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter127:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-127-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 127"
+      Description: "Parameter 127 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "127"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter128:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-128-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 128"
+      Description: "Parameter 128 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "128"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter129:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-129-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 129"
+      Description: "Parameter 129 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "129"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter130:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-130-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 130"
+      Description: "Parameter 130 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "130"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter131:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-131-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 131"
+      Description: "Parameter 131 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "131"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter132:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-132-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 132"
+      Description: "Parameter 132 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "132"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter133:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-133-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 133"
+      Description: "Parameter 133 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "133"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter134:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-134-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 134"
+      Description: "Parameter 134 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "134"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter135:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-135-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 135"
+      Description: "Parameter 135 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "135"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter136:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-136-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 136"
+      Description: "Parameter 136 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "136"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter137:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-137-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 137"
+      Description: "Parameter 137 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "137"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter138:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-138-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 138"
+      Description: "Parameter 138 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "138"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter139:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-139-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 139"
+      Description: "Parameter 139 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "139"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter140:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-140-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 140"
+      Description: "Parameter 140 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "140"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter141:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-141-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 141"
+      Description: "Parameter 141 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "141"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter142:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-142-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 142"
+      Description: "Parameter 142 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "142"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter143:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-143-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 143"
+      Description: "Parameter 143 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "143"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter144:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-144-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 144"
+      Description: "Parameter 144 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "144"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter145:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-145-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 145"
+      Description: "Parameter 145 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "145"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter146:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-146-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 146"
+      Description: "Parameter 146 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "146"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter147:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-147-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 147"
+      Description: "Parameter 147 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "147"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter148:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-148-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 148"
+      Description: "Parameter 148 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "148"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter149:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-149-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 149"
+      Description: "Parameter 149 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "149"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter150:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-150-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 150"
+      Description: "Parameter 150 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "150"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter151:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-151-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 151"
+      Description: "Parameter 151 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "151"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter152:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-152-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 152"
+      Description: "Parameter 152 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "152"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter153:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-153-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 153"
+      Description: "Parameter 153 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "153"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter154:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-154-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 154"
+      Description: "Parameter 154 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "154"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter155:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-155-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 155"
+      Description: "Parameter 155 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "155"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter156:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-156-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 156"
+      Description: "Parameter 156 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "156"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter157:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-157-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 157"
+      Description: "Parameter 157 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "157"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter158:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-158-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 158"
+      Description: "Parameter 158 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "158"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter159:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-159-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 159"
+      Description: "Parameter 159 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "159"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter160:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-160-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 160"
+      Description: "Parameter 160 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "160"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter161:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-161-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 161"
+      Description: "Parameter 161 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "161"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter162:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-162-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 162"
+      Description: "Parameter 162 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "162"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter163:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-163-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 163"
+      Description: "Parameter 163 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "163"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter164:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-164-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 164"
+      Description: "Parameter 164 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "164"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter165:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-165-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 165"
+      Description: "Parameter 165 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "165"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter166:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-166-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 166"
+      Description: "Parameter 166 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "166"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter167:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-167-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 167"
+      Description: "Parameter 167 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "167"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter168:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-168-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 168"
+      Description: "Parameter 168 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "168"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter169:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-169-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 169"
+      Description: "Parameter 169 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "169"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter170:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-170-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 170"
+      Description: "Parameter 170 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "170"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter171:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-171-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 171"
+      Description: "Parameter 171 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "171"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter172:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-172-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 172"
+      Description: "Parameter 172 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "172"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter173:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-173-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 173"
+      Description: "Parameter 173 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "173"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter174:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-174-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 174"
+      Description: "Parameter 174 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "174"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter175:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-175-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 175"
+      Description: "Parameter 175 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "175"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter176:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-176-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 176"
+      Description: "Parameter 176 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "176"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter177:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-177-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 177"
+      Description: "Parameter 177 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "177"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter178:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-178-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 178"
+      Description: "Parameter 178 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "178"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter179:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-179-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 179"
+      Description: "Parameter 179 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "179"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter180:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-180-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 180"
+      Description: "Parameter 180 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "180"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter181:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-181-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 181"
+      Description: "Parameter 181 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "181"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter182:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-182-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 182"
+      Description: "Parameter 182 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "182"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter183:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-183-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 183"
+      Description: "Parameter 183 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "183"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter184:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-184-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 184"
+      Description: "Parameter 184 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "184"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter185:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-185-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 185"
+      Description: "Parameter 185 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "185"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter186:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-186-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 186"
+      Description: "Parameter 186 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "186"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter187:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-187-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 187"
+      Description: "Parameter 187 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "187"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter188:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-188-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 188"
+      Description: "Parameter 188 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "188"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter189:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-189-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 189"
+      Description: "Parameter 189 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "189"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter190:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-190-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 190"
+      Description: "Parameter 190 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "190"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter191:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-191-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 191"
+      Description: "Parameter 191 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "191"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter192:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-192-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 192"
+      Description: "Parameter 192 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "192"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter193:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-193-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 193"
+      Description: "Parameter 193 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "193"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter194:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-194-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 194"
+      Description: "Parameter 194 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "194"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter195:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-195-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 195"
+      Description: "Parameter 195 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "195"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter196:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-196-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 196"
+      Description: "Parameter 196 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "196"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter197:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-197-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 197"
+      Description: "Parameter 197 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "197"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter198:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-198-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 198"
+      Description: "Parameter 198 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "198"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter199:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-199-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 199"
+      Description: "Parameter 199 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "199"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
+  SSMParameter200:
+    Type: AWS::SSM::Parameter
+    Properties:
+      Name: !Sub "/${Environment}/app/config/parameter-200-very-long-name-to-increase-template-size"
+      Type: String
+      Value: "This is a very long parameter value designed to increase the template size significantly for testing purposes parameter 200"
+      Description: "Parameter 200 - Long description to increase template size for testing CloudFormation S3 upload behavior when templates exceed 51200 bytes"
+      Tags:
+        Environment: !Ref Environment
+        ParameterNumber: "200"
+        Purpose: "Template size testing"
+        Component: "SSM Parameter"
+        TestingPhase: "Large template validation"
+
