@@ -251,6 +251,13 @@ jobs:
           echo "Changes Count: ${{ steps.drift-cs.outputs.changes-count }}"
           echo "Changes Summary: ${{ steps.drift-cs.outputs.changes-summary }}"
 
+      - name: Execute drift-reverting change set
+        uses: aws-actions/aws-cloudformation-github-deploy@v2.0.0-beta
+        with:
+          mode: "execute-only"
+          name: test-drift-${{ github.run_number }}
+          execute-change-set-id: ${{ steps.drift-cs.outputs.change-set-id }}
+
   cleanup:
     runs-on: ubuntu-latest
     needs: [test-create-and-execute, test-large-template, test-validation-error, test-execution-error, test-create-only-then-execute, test-drift-detection]
