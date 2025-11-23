@@ -271,14 +271,42 @@ jobs:
 
       - name: Cleanup test stacks
         run: |
-          aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE --query "StackSummaries[?contains(StackName, 'test-') && contains(StackName, '${{ github.run_number }}')].StackName" --output text | tr '\t' '\n' | while read stack; do
-            if [ ! -z "$stack" ]; then
-              echo "Deleting stack: $stack"
-              aws cloudformation delete-stack --stack-name "$stack"
-            fi
-          done
+          # Find all test stacks for this run
+          stacks=$(aws cloudformation list-stacks \
+            --query "StackSummaries[?contains(StackName, 'test-') && contains(StackName, '${{ github.run_number }}') && StackStatus != 'DELETE_COMPLETE'].StackName" \
+            --output text)
+          
+          if [ ! -z "$stacks" ]; then
+            echo "Found stacks to delete: $stacks"
+            echo "$stacks" | tr '\t' '\n' | while read stack; do
+              if [ ! -z "$stack" ]; then
+                echo "Deleting stack: $stack"
+                aws cloudformation delete-stack --stack-name "$stack"
+              fi
+            done
+            
+            # Wait for all deletions to complete
+            echo "Waiting for stack deletions to complete..."
+            echo "$stacks" | tr '\t' '\n' | while read stack; do
+              if [ ! -z "$stack" ]; then
+                echo "Waiting for $stack to delete..."
+                aws cloudformation wait stack-delete-complete --stack-name "$stack" || echo "Stack $stack deletion failed or timed out"
+              fi
+            done
+          else
+            echo "No stacks found to delete"
+          fi
 
       - name: Cleanup SSM parameters
         run: |
-          # Clean up any leftover SSM parameters
-          aws ssm delete-parameter --name "/test/drift-${{ github.run_number }}" || echo "Parameter already deleted"
+          # Clean up all test parameters for this run
+          echo "Cleaning up SSM parameters..."
+          aws ssm describe-parameters \
+            --parameter-filters "Key=Name,Option=BeginsWith,Values=/test/" \
+            --query "Parameters[?contains(Name, '${{ github.run_number }}')].Name" \
+            --output text | tr '\t' '\n' | while read param; do
+            if [ ! -z "$param" ]; then
+              echo "Deleting parameter: $param"
+              aws ssm delete-parameter --name "$param" || echo "Parameter $param already deleted"
+            fi
+          done
